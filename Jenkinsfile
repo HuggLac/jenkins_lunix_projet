@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PYTHON_HOME = '/usr/bin/'
+        PYTHON_HOME = '/usr/bin'
         PATH = "${env.PATH};${PYTHON_HOME}"
     }
   
@@ -14,8 +14,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-					sh 'echo "Running on Windows"'
-					sh 'python helloworld.py'					
+					sh 'echo "Running on Linux"'
+					sh 'python3 --version'
+					sh 'python3 hello.py'					
                 }
             }
         }
